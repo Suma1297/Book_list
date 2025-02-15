@@ -1,0 +1,36 @@
+<div>
+    <label for="minprice">Min Price</label>
+    <input type="text" [(ngModel)]="Minprice">
+    <br>
+    <label>Max Price</label>
+    <input type="text" [(ngModel)]="Maxprice">
+    <br>
+    <button (click)="filter()">Filter</button>
+
+    <button (click)="reset()">Reset</button>
+</div>
+
+
+<div>
+    <h2>Add new book</h2>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="newBook.title">
+
+    <label>Price</label>
+    <input type="text" [(ngModel)]="newBook.price">
+
+    <button (click)="AddBook()">Submit</button>
+</div>
+
+<table >
+    <thead >
+        <th>Title</th>
+        <th>price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let books of filteredbooks">
+            <td>{{books.title}}</td>
+            <td>{{books.price}}</td>
+        </tr>
+    </tbody>
+</table>
